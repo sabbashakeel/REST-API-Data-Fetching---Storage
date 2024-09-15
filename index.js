@@ -6,7 +6,7 @@ const pool = new Pool({
   user: 'postgres',
   host: 'localhost',
   database: 'postgres',
-  password: '12345',
+  password: 'Password',
   port: '5432',
 });
 
@@ -32,8 +32,8 @@ async function fetchDataAndStore() {
 
 // Fetch UIDs of all registered restaurants
 async function fetchRestaurantUIDs() {
-  const url = 'https://api.formitable.com/api/v1.2';
-  const apiKey = 'CTc3hCbkrz4nR7mms0NeBQFAaXbBFCZ3bO8s47Giez4=';
+  const url = 'YOUR_URL';
+  const apiKey = 'YOUR_API_KEY';
   const response = await axios.get(url, {
     headers: { Authorization: `Bearer ${apiKey}` },
   });
@@ -49,8 +49,8 @@ async function fetchAndStoreDataForUID(uid) {
   ];
 
   for (const endpoint of endpoints) {
-    const url = `https://api.formitable.com/api/v1.2${endpoint}`;
-    const apiKey = 'CTc3hCbkrz4nR7mms0NeBQFAaXbBFCZ3bO8s47Giez4=';
+    const url = `YOUR_URL${endpoint}`;
+    const apiKey = 'YOUR_API_KEY';
     const response = await axios.get(url, {
       headers: { Authorization: `Bearer ${apiKey}` },
     });
